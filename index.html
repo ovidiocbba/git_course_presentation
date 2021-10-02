@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Git Hooks</title>
-  <meta name="description" content="Git Hooks">
+  <title>Git Course</title>
+  <meta name="description" content="Git Course">
   <meta name="author" content="Simon Ovidio Miranda Chiri">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="shortcut icon" href="img/git.ico">
@@ -23,15 +23,831 @@
   <div class="slides">
     <section>
       <h2>Git Course</h2>
-      <img data-src="img/git_logo1.png" width="512" height="214" style="border: none;box-shadow: none; background-color: transparent;"/>
+      <img data-src="img/git_logo.png" width="512" height="214" style="border: none;box-shadow: none; background-color: transparent;"/>
       <p>
         <small>Created by: <a>Simón Ovidio Miranda Chiri</a> /<a>ovidio.miranda@jalasoft.com</a></small>
       </p>
     </section>
     <section>
-      <h1>Git</h1>
+      <h2>Agenda</h2>
+      <ul type="1">
+        <li>Introduction</li>
+        <li>Installation</li>
+        <li>Initial Git Configuration</li>
+        <li>Creating a Git repo</li>
+        <ul>
+          <li>Initialize Git</li>
+          <li>Adding a file</li>
+        </ul>
+        <li>Remote repository</li>
+        <ul>
+          <li>Create</li>
+          <li>Push</li>
+          <li>Pull</li>
+          <li>Clone</li>
+        </ul>
+      </ul>
+    </section>
+    <section>
+      <h2>Agenda</h2>
+      <ul>
+        <li>Branch management</li>
+        <ul>
+          <li>Creating</li>
+          <li>Swith to a different branch</li>
+          <li>Merging changes from a branch</li>
+          <li>Deleting</li>
+          <li>Renaming</li>
+          <li>List all branches</li>
+        </ul>
+        <li>Resolving conflicts</li>
+        <li>Extras</li>
+        <li>Git Resources</li>
+      </ul>
+    </section> <section>
+    <h1>Introduction</h1>
+  </section>
+    <section>
+      <h2>WHAT IS GIT?</h2>
+      <blockquote cite="https://en.wikipedia.org/wiki/Git">
+        &ldquo;Git is a distributed version-control system for tracking changes in source code during software
+        development.&rdquo;
+      </blockquote>
+    </section>
+    <section>
+      <h2>WHAT IS GIT?</h2>
+      <ul>
+        <li>A system that keep records of your changes.</li>
+        <li>Allows for collaborative development.</li>
+        <li>Allows you to know who made what changes and when.</li>
+        <li>Allows you to revert any changes and go back to a previous state.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Installation</h2>
+      <p><a href="https://git-scm.com/downloads" target="_blank">http://git-scm.com/downloads</a></p>
+      <pre><code>git --version</code></pre>
+      <pre data-cc="false"><code class="hljs text">git version 2.32.0.windows.1</code></pre>
+    </section>
+    <section>
+      <h2>Initial Git Configuration</h2>
+      <small>Your Identify:</small>
+      <pre><code>git config --global user.name "Your Name"</code></pre>
+      <pre><code>git config --global user.email example@gmail.com</code></pre>
+      <small>Editor</small>
+      <pre><code>git config --global core.editor vim</code></pre>
+      <small>To verify these are set:</small>
+      <pre><code>git config --global -l</code></pre>
+      <pre><code>git config --global -e</code></pre>
+    </section>
+    <section>
+      <h1>Creating a Git repo</h1>
+    </section>
+    <section>
+      <h2>Creating a Git repo</h2>
+      <small>You first need to go to that project’s directory.</small>
+      <pre><code>cd C:my_project</code></pre>
+      <small>Initialize Git.</small>
+      <pre><code>git init</code></pre>
+    </section>
+    <section data-transition="none">
+      <h2>Git areas</h2>
+      <img data-src="img/git_area_basic/00_1.png" width="600" height="550"
+           style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section data-transition="none">
+      <h2>Git areas</h2>
+      <img data-src="img/git_area_basic/00_2.png" width="600" height="550"
+           style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section data-transition="none">
+      <h2>Git areas</h2>
+      <img data-src="img/git_area_basic/00_3.png" width="600" height="550"
+           style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section>
+      <h2>Adding a file</h2>
+      <small>Create a file.</small>
+      <pre><code>vim first.txt</code></pre>
+      <small>With information.</small>
+      <pre><code data-trim class="hljs text">
+          Method A
+          Method B
+          Method C
+        </code></pre>
+    </section>
+    <section>
+      <h2>Adding a file</h2>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+          git add <path-spec>
+          </script> </code></pre>
+      <pre><code>git add first.txt</code></pre>
+      <small>Add all the modified files of your project.</small>
+      <pre><code>git add .</code></pre>
+      <pre><code>git add --all</code></pre>
+      <pre><code>git add -A</code></pre>
+    </section>
+    <section>
+      <h2>Adding a file</h2>
+      <small>Directories nested in a project.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+          git add <path-spec>
+          </script> </code></pre>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+          git add <main-directory>/<sub-directory>/<file-name>
+          </script> </code></pre>
+      <pre><code>git add *second.txt</code></pre>
+    </section>
+    <section>
+      <h2>Adding a file</h2>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+          git add <file-name>
+          git add <main-directory>/<sub-directory>/<file-name>
+          </script> </code></pre>
+      <small>Add changes by hunk.</small>
+      <pre><code>git add --path</code></pre>
+      <pre><code>git add -p</code></pre>
+    </section>
+    <section>
+      <h2>Adding a file</h2>
+      <small>Interactive interface.</small>
+      <pre><code>git add --interactive</code></pre>
+      <pre><code>git add -i</code></pre>
+    </section>
+    <section data-auto-animate>
+      <h2>Adding a file</h2>
+      <small>Interactive interface.</small>
+      <pre data-id="code-animation" data-cc="false"><code class="hljs shell" data-trim data-noescape>
+          <script type="text/template">
+            $ git add -i
+          </script>
+          </code></pre>
+    </section>
+    <section data-auto-animate>
+      <h2>Adding a file</h2>
+      <small>Interactive interface.</small>
+      <pre data-id="code-animation" data-cc="false"><code class="hljs shell" data-trim data-noescape>
+          <script type="text/template">
+            $ git add -i
+            staged     unstaged path
+            1:    unchanged        +1/-0 first.txt
+
+            *** Commands ***
+            1: status       2: update       3: revert       4: add untracked
+            5: patch        6: diff         7: quit         8: help
+            What now>
+          </script>
+          </code></pre>
+    </section>
+    <section>
+      <h2>Adding a file</h2>
+      <small>Check the status.</small>
+      <pre><code>git status</code></pre>
+      <small>Give the output in the short-format.</small>
+      <pre><code>git status --short</code></pre>
+      <pre><code>git status -s</code></pre>
+    </section>
+    <section>
+      <h2>Adding a file</h2>
+      <small>Commit a file.</small>
+      <pre><code>git commit -m "My first commit in this repo"</code></pre>
+    </section>
+    <section>
+      <h1>Remote repository</h1>
+    </section>
+    <section data-transition="none">
+      <h2>Git areas</h2>
+      <img data-src="img/git_area_complete/01_1.png" width="700" height="550"
+           style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section data-transition="none">
+      <h2>Git areas</h2>
+      <img data-src="img/git_area_complete/01_2.png" width="700" height="550"
+           style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section data-transition="none">
+      <h2>Git areas</h2>
+      <img data-src="img/git_area_complete/01_3.png" width="700" height="550"
+           style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section data-transition="none">
+      <h2>Git areas</h2>
+      <img data-src="img/git_area_complete/01_4.png" width="700" height="550"
+           style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section data-transition="none">
+      <h2>Git areas</h2>
+      <img data-src="img/git_area_complete/01_5.png" width="700" height="550"
+           style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section>
+      <h2>Remote repository</h2>
+      <small>Create the remote repository.</small>
+      <p>
+        <a href="https://gitlab.com/projects/new" target="_blank">https://gitlab.com/projects/new</a>
+      </p>
+      <img data-src="img/0_create_remote_repository.png" width="460" height="376" />
+    </section>
+    <section>
+      <h2>Remote repository</h2>
+      <small>Add a Remote Repository.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+            <script type="text/template">
+              git remote add <remote-name> <url>
+            </script> </code></pre>
+      <pre data-cc="true"><code data-trim class="hljs text">
+              <script type="text/template">
+                git remote add origin https://gitlab.com/ovidiocbba/project.git
+              </script> </code></pre>
+      <small>Show information about remote.</small>
+      <pre><code>git remote show origin</code></pre>
+    </section>
+    <section>
+      <h2>Remote repository</h2>
+      <small>Pushing to a remote repository.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git push <remote-name> <branch_name>
+          </script> </code></pre>
+      <pre data-cc="false"><code data-trim class="hljs text">
+            <script type="text/template">
+              git push origin master
+            </script> </code></pre>
+    </section>
+    <section>
+      <h2>Remote repository</h2>
+      <small>Cloning an existing Repository.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git clone <url>
+          </script> </code></pre>
+      <pre data-cc="true"><code data-trim class="hljs text">
+            <script type="text/template">
+              git clone https://gitlab.com/ovidiocbba/project.git
+            </script> </code></pre>
+    </section>
+    <section>
+      <h2>Remote repository</h2>
+      <small>Pulling changes from a remote repository.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git pull <remote-name> <branch_name>
+          </script> </code></pre>
+      <pre data-cc="true"><code data-trim class="hljs text">
+            <script type="text/template">
+              git pull origin master
+            </script> </code></pre>
+    </section>
+    <section>
+      <h1>Branch Management</h1>
+    </section>
+    <section data-transition="none">
+      <h2>Branch Management</h2>
+      <img data-src="img/branch_management/02-1.png" width="700" height="500"
+           style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section data-transition="none">
+      <h2>Branch Management</h2>
+      <img data-src="img/branch_management/02-2.png" width="700" height="500"
+           style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section data-transition="none">
+      <h2>Branch Management</h2>
+      <img data-src="img/branch_management/02-3.png" width="700" height="500"
+           style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section data-transition="none">
+      <h2>Branch Management</h2>
+      <img data-src="img/branch_management/02-4.png" width="700" height="500"
+           style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section data-transition="none">
+      <h2>Branch Management</h2>
+      <img data-src="img/branch_management/02-5.png" width="700" height="500"
+           style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section>
+      <h2>Branch Management</h2>
+      <small>Creating new Branch.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+            <script type="text/template">
+              git branch <branch_name>
+            </script> </code></pre>
+      <pre><code>git branch develop</code></pre>
+      <small>Swith to a different branch.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git checkout <other_branch_name>
+          </script> </code></pre>
+      <pre><code>git checkout develop</code></pre>
+      <small>To create a new branch and switch to that branch.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git checkout -b <branch_name>
+          </script> </code></pre>
+      <pre><code>git checkout -b feature-X</code></pre>
+    </section>
+    <section>
+      <h2>Branch Management</h2>
+      <h6>To merge changes from a branch into another branch</h6>
+      <small>Checkout the branch you want to update.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+            <script type="text/template">
+              git checkout <branch_destination>
+            </script> </code></pre>
+      <pre><code>git checkout develop</code></pre>
+      <small>Then merge branches.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+              <script type="text/template">
+                git merge <branch_name_to_be_merge>
+              </script> </code></pre>
+      <pre><code>git merge feature-X</code></pre>
+      <pre data-cc="false"><code data-trim class="hljs text">
+                <script type="text/template">
+                  git merge <remote-name>/<branch_name_to_be_merge>
+                </script> </code></pre>
+      <pre><code>git merge origin/feature-X</code></pre>
+    </section>
+    <section data-transition="none">
+      <h2>Branch Management</h2>
+      <small>Create a branch and merge changes.</small>
+      <br>
+      <br>
+      <br>
+      <img data-src="img/git_branch/03-1.png" width="850" height="200" style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section data-transition="none">
+      <h2>Branch Management</h2>
+      <small>Create a branch and merge changes.</small>
+      <pre><code>git checkout -b feature-X</code></pre>
+      <br>
+      <img data-src="img/git_branch/03-2.png" width="850" height="200" style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section data-transition="none">
+      <h2>Branch Management</h2>
+      <small>Create a branch and merge changes.</small>
+      <pre><code>git checkout -b feature-X</code></pre>
+      <pre><code>git checkout develop</code></pre>
+      <pre><code>git merge feature-X</code></pre>
+      <img data-src="img/git_branch/03-3.png" width="850" height="200"
+           style="border: none;box-shadow: none; background-color: transparent;" />
+    </section>
+    <section>
+      <h2>Branch Management</h2>
+      <small>Deleting a branch.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+            <script type="text/template">
+              git branch -d <branch_name>
+            </script> </code></pre>
+      <pre><code>git branch -d feature-01</code></pre>
+      <small>Force delete branch.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git branch -D <branch_name>
+          </script> </code></pre>
+      <pre><code>git branch -D feature-01</code></pre>
+    </section>
+    <section>
+      <h2>Branch Management</h2>
+      <small>Renaming the current branch.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+            <script type="text/template">
+              git branch -m <new_branch_name>
+            </script> </code></pre>
+      <pre><code>git branch -m feature-2</code></pre>
+      <small>Rename another branch.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git branch -m <branch_you_want_to_rename> <new_branch_name>
+          </script> </code></pre>
+      <pre><code>git branch -m feature-2 feature-02</code></pre>
+    </section>
+    <section>
+      <h2>Branch Management</h2>
+      <small>List local branches.</small>
+      <pre><code>git branch</code></pre>
+      <small>List remote branches.</small>
+      <pre><code>git branch -r</code></pre>
+      <small>List all branches.</small>
+      <pre><code>git branch -a</code></pre>
+    </section>
+    <section>
+      <h1>Resolving conflicts</h1>
+    </section>
+    <section>
+      <h2>Resolving conflicts</h2>
+      <small>Set vimdiff as a git mergetool.</small>
+      <pre><code>git config --global merge.tool vimdiff</code></pre>
+      <pre><code>git config --global merge.conflictstyle diff3</code></pre>
+      <pre><code>git config --global mergetool.prompt false</code></pre>
+      <small>Open the git merge tool.</small>
+      <pre><code>git mergetool</code></pre>
+    </section>
+    <section>
+      <h2>Resolving conflicts</h2>
+      <p><small>Git Merge tool: Vimdiff</small></p>
+      <a href="img/mergetool/02.png" target="blank">
+        <img data-src="img/mergetool/01.png" width="325" height="225" />
+      </a>
+      <ul>
+        <li><small>LOCAL is how the file looked in your target branch.</small></li>
+        <li><small>BASE is how the file looked before both changes.</small></li>
+        <li><small>REMOTE is how the file looked in your source branch.</small></li>
+        <li><small>MERGED is the merge result, this is what gets saved in the repo.</small></li>
+      </ul>
+    </section>
+    <section>
+      <h2>Resolving conflicts</h2>
+      <p><small>Vim diffget commands:</small></p>
+      <pre><code>:diffget LOCAL</code></pre>
+      <pre><code>:diffget BASE</code></pre>
+      <pre><code>:diffget REMOTE</code></pre>
+      <pre><code>:diffg LO</code></pre>
+      <pre><code>:diffg BA</code></pre>
+      <pre><code>:diffg RE</code></pre>
+    </section>
+    <section>
+      <h2>Resolving conflicts</h2>
+      <a href="img/mergetool/02.png" target="blank">
+        <img data-src="img/mergetool/02.png" width="250" height="150" />
+      </a>
+      <pre><code>:diffget REMOTE</code></pre>
+      <p><small>Save the merge result, and quit all windows.</small>
+      <pre><code>:wqa</code></pre>
+      <p><small>Now you are ready to commit your changes.</small>
+      <pre><code>git commit -m "Resolved conflicts"</code></pre>
+    </section>
+    <section>
+      <h1>Extras</h1>
+    </section>
+    <section>
+      <h2>Extras</h2>
+      <p>Change the message of the last commit.</p>
+      <pre><code>git commit --amend -m "Update commit message"</code></pre>
+      <p>Add changes to the last commit without changing its commit message.</p>
+      <pre><code>git add new_file</code></pre>
+      <pre><code>git commit --amend --no-edit</code></pre>
+    </section>
+    <section>
+      <h1>Git aliases</h1>
+    </section>
+    <section>
+      <h2>Git aliases</h2>
+      <p>Git aliases are a powerful tool that create shortcuts to frequently used Git commands.</p>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git config --global alias.<shortcut> <command>
+          </script> </code></pre>
+      <pre><code>git config --global alias.st status</code></pre>
+      <pre><code>git st</code></pre>
+    </section>
+    <section>
+      <h2>Extras</h2>
+      <p>Ignore changes in tracked files with Git.</p>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git update-index --assume-unchanged <file_name>
+          </script> </code></pre>
+      <p>To return to normal.</p>
+      <pre data-cc="false"><code data-trim class="hljs text">
+            <script type="text/template">
+              git update-index --assume-unchanged <file_name>
+            </script> </code></pre>
+      <p>Using aliases.</p>
+      <pre><code>git config --global alias.unwatch 'update-index --assume-unchanged'</code></pre>
+      <pre><code>git config --global alias.watch 'update-index --no-assume-unchanged'</code></pre>
+      <pre><code>git unwatch first.txt</code></pre>
+      <pre><code>git watch first.txt</code></pre>
+    </section>
+    <section>
+      <h2>Extras</h2>
+      <p>See the changes in the working directory.</p>
+      <pre><code>git diff</code></pre>
+      <p>Show name of files changed.</p>
+      <pre><code>git diff --name-only</code></pre>
+      <p>Show all files in conflict.</p>
+      <pre><code>git diff --name-only --diff-filter=U</code></pre>
+    </section>
+    <section>
+      <h1>Tags</h1>
+    </section>
+    <section>
+      <h2>Tags</h2>
+      <p>Git has the ability to tag specific points in a repository’s history as being important.</p>
+      <p>Creating a tag.</p>
+      <pre><code>git tag -a v2.0 -m "My version 2.0"</code></pre>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git tag -a v1.0 <commit-hash> -m "My version 1.0"
+          </script> </code></pre>
+      <pre><code>git tag -a v1.0 3643c10 -m "My version 1.0"</code></pre>
+      <p>Push the tags to the remote repository.</p>
+      <pre><code>git push origin --tags</code></pre>
+    </section>
+    <section>
+      <h2>Tags</h2>
+      <p>See local tags.</p>
+      <pre><code>git tag</code></pre>
+      <small>See the tag data along with the commit that was tagged.</small>
+      <pre><code>git show v1.0</code></pre>
+      <p>Checking out Tags.</p>
+      <pre><code>git checkout v1.0</code></pre>
+      <pre><code>git checkout -b version2 v2.0.0</code></pre>
+      <p>Deleting a tag.</p>
+      <pre><code>git tag -d v1.0</code></pre>
+    </section>
+    <section>
+      <h2>Extras</h2>
+      <small>Delete untracked directories and untracked files.</small>
+      <pre><code>git clean -fd</code></pre>
+      <small>Delete a remote branch.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git push origin --delete <remote_branchname>
+          </script> </code></pre>
+      <small>Remove the branches that have already been merged in develop.</small>
+      <pre><code>git branch --merged develop | grep -v '^\*' | xargs -n 1 git branch -d</code></pre>
+      <small>Cleanup unnecessary files and optimize the local repository.</small>
+      <pre><code>git gc</code></pre>
+    </section>
+    <section>
+      <h2>Extras</h2>
+      <small>Viewing the Commit History</small>
+      <pre><code>git log --oneline -5</code></pre>
+      <small>Pretty git log</small>
+      <pre><code>git log --oneline -5 --pretty="%C(Yellow)%h  %C(reset)%ad (%C(Green)%cr%C(reset))%x09 %C(Cyan)%an: %C(reset)%s" --date=short</code></pre>
+      <small>Show the branches</small>
+      <pre><code>git log --graph</code></pre>
+    </section>
+    <section>
+      <h1>Return to a previous commit</h1>
+    </section>
+    <section>
+      <h2>Return to a previous commit</h2>
+      <small>To temporarily jump back to that commit.</small>
+      <pre><code>git checkout 789abcd</code></pre>
+      <small>To roll back to a previous commit while keeping the changes(without pushing).</small>
+      <pre><code>git reset --soft HEAD^</code></pre>
+      <small>To permanently discard any changes made in the last commit.</small>
+      <pre><code>git reset --hard HEAD^</code></pre>
+      <small>Revert some existing commitst(especially when those commits have been pushed to a remote
+        repository.)</small>
+      <pre><code>git revert HEAD^</code></pre>
+    </section>
+    <section>
+      <h1>Recovering</h1>
+    </section>
+    <section>
+      <h2>Recovering</h2>
+      <pre><code>git reflog -5 --date=format:'%Y-%m-%d %H:%M:%S' --format='%C(auto)%h - %an%x08 - %C(green)%ad -%C(blue)%cr -%C(reset) %gs (%s)'</code></pre>
+      <p>You're back where you started</p>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git reset --hard <commit-hash>
+          </script> </code></pre>
+      <pre><code>git reset --hard 2be3846</code></pre>
+    </section>
+    <section>
+      <h2>Extras</h2>
+      <small>Copying a commit from one branch to another</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git cherry-pick <commit-hash>
+          </script> </code></pre>
+      <pre><code>git cherry-pick 2be3846</code></pre>
+      <small>Quickly switch to the previous branch.</small>
+      <pre><code>git checkout -</code></pre>
+    </section>
+    <section>
+      <h1>Stashing and Cleaning</h1>
+    </section>
+    <section>
+      <h2>Stashing and Cleaning</h2>
+      <small>To quickly save your work you can use.</small>
+      <pre><code>git stash</code></pre>
+      <small>To apply our changes</small>
+      <pre><code>git stash apply</code></pre>
+      <small>If you want to recover and delete the stash.</small>
+      <pre><code>git stash pop</code></pre>
+    </section>
+    <section>
+      <h2>Stashing and Cleaning</h2>
+      <small>Save all changes and put a message to identify.</small>
+      <pre><code>git stash save -u "Add Main page"</code></pre>
+      <small>Show list of stashes.</small>
+      <pre><code>git stash list</code></pre>
+      <pre><code>stash@{0}: On feature-page: Add Main page</code></pre>
+      <small>To recover the changes you use the number of stash {0}.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git stash apply <stash_id>
+          </script> </code></pre>
+      <pre><code>git stash apply 0</code></pre>
+    </section>
+    <section>
+      <h2>Stashing and Cleaning</h2>
+      <small>Remove a single stash entry from the list of stash entries.</small>
+      <pre data-cc="false"><code data-trim class="hljs text">
+          <script type="text/template">
+            git stash drop <stash_id>
+          </script> </code></pre>
+      <pre><code>git stash drop 0</code></pre>
+    </section>
+    <section>
+      <h1>Hooks</h1>
+    </section>
+    <section>
+      <h2>Hooks</h2>
+      <img data-src="img/folder_structure.png" width="550" height="450" />
+      <pre><code data-cc="false">project-name/.git/hooks</code></pre>
+    </section>
+    <section>
+      <h2>Hooks</h2>
+      <sml>Blocks a push to master branch.</sml>
+      <pre><code>vim .git/hooks/pre-push</code></pre>
+      <pre style="font-size:20px;"><code class="hljs" data-trim>
+          #!/bin/bash
+          protected_branch='master'
+          current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+
+          if [ $protected_branch = $current_branch ]
+          then
+              read -p "You're about to push master, is that what you intended? [y|n] " -n 1 -r < /dev/tty
+              echo
+              if echo $REPLY | grep -E '^[Yy]$' > /dev/null
+              then
+                  exit 0 # push will execute
+              fi
+              exit 1 # push will not execute
+          else
+              exit 0 # push will execute
+          fi
+      </code></pre>
+    </section>
+    <section>
+      <h2>Hooks</h2>
+      <sml style="font-size:25px;">Alert if you don't have the latest develop branch changes.</sml>
+      <pre style="font-size:25px;"><code>rm .git/hooks/pre-push</code></pre>
+      <pre style="font-size:25px;"><code>vim .git/hooks/pre-push</code></pre>
+      <pre style="font-size:15px;"><code class="hljs bash" data-trim>
+            #!/bin/bash
+            current_branch=$(git rev-parse --abbrev-ref HEAD)
+            target_branch='develop'
+
+            git_ahead_and_behind=$(git rev-list --left-right --count origin/$target_branch...$current_branch | awk '{print ""$1"-"$2""}')
+            behind=$(echo $git_ahead_and_behind | cut -f1 -d-)
+
+            if [ $behind -gt 0 ];
+            then
+                echo -e "\e[31mAlert:\e[0m The '$current_branch' branch does not have the latest changes from the '$target_branch' branch."
+                echo "The source branch is '$behind' commits behind the target branch".
+            fi
+      </code></pre>
+    </section>
+    <section>
+      <h2>Hooks</h2>
+      <sml>Execute the Javadoc task.</sml>
+      <pre><code>vim .git/hooks/pre-push</code></pre>
+      <pre style="font-size:20px;"><code class="hljs" data-trim>
+            #!/bin/bash
+            read -p "Do you want to execute the Javadoc task? [y|n] " -n 1 -r < /dev/tty
+            echo
+            if echo $REPLY | grep -E '^[Yy]$' > /dev/null; then
+              echo "** Executing the Javadoc task **"
+              gradle javadoc
+              echo "** Finished the Javadoc task **"
+            else
+              echo "** The javadoc task was not executed **"
+            fi
+      </code></pre>
+    </section>
+    <section>
+      <h2>Hooks</h2>
+      <sml>Team</sml>
+      <pre><code>vim .git/hooks/pre-push</code></pre>
+      <pre style="font-size:20px;"><code class="hljs" data-trim>
+            #!/bin/bash
+            # Section 1.
+            current_branch=$(git rev-parse --abbrev-ref HEAD)
+            target_branch='develop'
+
+            git_ahead_and_behind=$(git rev-list --left-right --count origin/$target_branch...$current_branch | awk '{print ""$1"-"$2""}')
+            behind=$(echo $git_ahead_and_behind | cut -f1 -d-)
+
+            if [ $behind -gt 0 ];
+            then
+              echo -e "\e[31mAlert:\e[0m The '$current_branch' branch does not have the latest changes from the '$target_branch' branch."
+              echo -e "The source branch is '$behind' commits behind the target branch\n"
+            fi
+
+            # Section 2.
+            read -p "Do you want to execute the Javadoc task? [y|n] " -n 1 -r < /dev/tty;
+            if echo $REPLY | grep -E '^[Yy]$' > /dev/null
+            then
+              echo -e "\n** Executing the Javadoc task **"
+              gradle javadoc
+              echo -e "\n** Finished the Javadoc task **"
+            else
+              echo -e "\n\e[31m** The javadoc task was not executed **\e[0m"
+            fi
+      </code></pre>
+    </section>
+    <section>
+      <section>
+        <h1>Git Resources</h1>
+      </section>
+      <section>
+        <h2>Git Resources</h2>
+        <small>You can get help from a command(add, commit, reset, etc.)</small>
+        <pre><code>git help add</code></pre>
+        <img data-src="img/git_add_manual_page.png" width="550" height="390"
+             style="border: none;box-shadow: none; background-color: transparent;" />
+      </section>
+      <section data-auto-animate>
+        <h2>Git Resources</h2>
+        <small>You can get help from a command(add, commit, reset, etc.)</small>
+        <pre data-id="code-animation"><code data-trim data-noescape data-line-numbers>
+				git add -h
+				</code></pre>
+      </section>
+      <section data-auto-animate>
+        <h2>Git Resources</h2>
+        <small>You can get help from a command(add, commit, reset, etc.)</small>
+        <pre data-id="code-animation" data-cc="false"><code class="hljs" data-trim data-noescape data-line-numbers>
+				<script type="text/template">
+				git add -h
+        usage: git add [<options>] [--] <pathspec>...
+
+					-n, --dry-run         dry run
+					-v, --verbose         be verbose
+
+					-i, --interactive     interactive picking
+					-p, --patch           select hunks interactively
+					-e, --edit            edit current diff and apply
+					-f, --force           allow adding otherwise ignored files
+					-u, --update          update tracked files
+					--renormalize         renormalize EOL of tracked files (implies -u)
+					-N, --intent-to-add   record only the fact that the path will be added later
+					-A, --all             add changes from all tracked and untracked files
+					--ignore-removal      ignore paths removed in the working tree (same as --no-all)
+					--refresh             don't add, only refresh the index
+					--ignore-errors       just skip files which cannot be added because of errors
+					--ignore-missing      check if - even missing - files are ignored in dry run
+					--chmod (+|-)x        override the executable bit of the listed files
+					--pathspec-from-file <file>
+										  read pathspec from file
+					--pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+				</script>
+				</code></pre>
+      </section>
+      <section>
+        <h2>Git Resources</h2>
+        <small>Visualizing Git</small>
+        <br />
+        <img data-src="img/visualizing_git.png" width="500" height="330" />
+        <p>
+          <a href="https://git-school.github.io/visualizing-git/"
+             target="_blank">http://git-school.github.io/visualizing-git</a>
+        </p>
+        <p>
+          <a href="http://onlywei.github.io/explain-git-with-d3/"
+             target="_blank">http://onlywei.github.io/explain-git-with-d3</a>
+        </p>
+      </section>
+      <section>
+        <h2>Git Resources</h2>
+        <small>Pro Git (Second Edition), Scott Chacon and Ben Straub.</small>
+        <br />
+        <img data-src="img/pro_git_book.png" width="280" height="370" />
+        <p>
+          <a href="http://git-scm.com/book" target="_blank">http://git-scm.com/book</a>
+        </p>
+      </section>
+      <section>
+        <h2>Git Resources</h2>
+        <small>Git Notes for Professionals</small>
+        <br />
+        <img data-src="img/git_notes_for_professionals.png" width="280" height="370" />
+        <p>
+          <a href="https://goalkicker.com/GitBook" target="_blank">https://goalkicker.com/GitBook</a>
+        </p>
+      </section>
+      <section>
+        <h2>Sometimes when one starts using git</h2>
+      </section>
+      <section>
+        <video controls data-autoplay data-src="video/La_he_liado_parda_Kaleidos.mp4" type="video/mp4"></video>
+      </section>
+      <section data-background="img/homer.gif">
+        <h2>Any Question?</h2>
+      </section>
     </section>
   </div>
+</div>
 </div>
 
 <script src="dist/reveal.js"></script>
