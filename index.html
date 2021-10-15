@@ -41,28 +41,28 @@
         </ul>
         <li><a href="#/remote_repository">Remote repository</a></li>
         <ul>
-          <li>Create</li>
-          <li>Push</li>
-          <li>Pull</li>
-          <li>Clone</li>
+          <li><a href="#/create_the_repository">Create</a></li>
+          <li><a href="#/push">Push</a></li>
+          <li><a href="#/pull">Pull</a></li>
+          <li><a href="#/clone">Clone</a></li>
         </ul>
       </ul>
     </section>
     <section>
       <h2>Agenda</h2>
       <ul style="font-size:90%;">
-        <li>Branch management</li>
+        <li><a href="#/branch_management">Branch management</a></li>
         <ul>
-          <li>Creating</li>
-          <li>Swith to a different branch</li>
-          <li>Merging changes from a branch</li>
-          <li>Deleting</li>
-          <li>Renaming</li>
-          <li>List all branches</li>
-        </ul>
-        <li>Resolving conflicts</li>
-        <li>Extras</li>
-        <li>Git Resources</li>
+          <li><a href="#/creating">Creating</a></li>
+          <li><a href="#/creating">Switch to a different branch</a></li>
+          <li><a href="#/merging_changes_from_a_branch">Merging changes from a branch</a></li>
+          <li><a href="#/deleting">Deleting</a></li>
+          <li><a href="#/renaming">Renaming</a></li>
+          <li><a href="#/list_all_branches">List all branches</a></li>
+         </ul>
+<!--        <li>Resolving conflicts</li>-->
+        <li><a href="#/extras">Extras</a></li>
+        <li><a href="#/git_resources">Git Resources</a></li>
       </ul>
     </section>
     <section id="introduction">
@@ -245,9 +245,9 @@
       <img data-src="img/git_area_complete/01_5.png" width="700" height="550"
            style="border: none;box-shadow: none; background-color: transparent;" />
     </section>
-    <section>
+    <section id="create_the_repository">
       <h2>Remote repository</h2>
-      <small>Create the remote repository.</small>
+      <small class="menu-title">Create the remote repository.</small>
       <p>
         <a href="https://gitlab.com/projects/new" target="_blank">https://gitlab.com/projects/new</a>
       </p>
@@ -255,7 +255,7 @@
     </section>
     <section>
       <h2>Remote repository</h2>
-      <small>Add a Remote Repository.</small>
+      <small class="menu-title">Add a Remote Repository.</small>
       <pre data-cc="false"><code data-trim class="hljs text">
             <script type="text/template">
               git remote add <remote-name> <url>
@@ -267,9 +267,9 @@
       <small>Show information about remote.</small>
       <pre><code>git remote show origin</code></pre>
     </section>
-    <section>
+    <section id="push">
       <h2>Remote repository</h2>
-      <small>Pushing to a remote repository.</small>
+      <small class="menu-title">Pushing to a remote repository.</small>
       <pre data-cc="false"><code data-trim class="hljs text">
           <script type="text/template">
             git push <remote-name> <branch_name>
@@ -279,9 +279,9 @@
               git push origin master
             </script> </code></pre>
     </section>
-    <section>
+    <section id="clone">
       <h2>Remote repository</h2>
-      <small>Cloning an existing Repository.</small>
+      <small class="menu-title">Cloning an existing Repository.</small>
       <pre data-cc="false"><code data-trim class="hljs text">
           <script type="text/template">
             git clone <url>
@@ -291,9 +291,9 @@
               git clone https://gitlab.com/ovidiocbba/project.git
             </script> </code></pre>
     </section>
-    <section>
+    <section id="pull">
       <h2>Remote repository</h2>
-      <small>Pulling changes from a remote repository.</small>
+      <small class="menu-title">Pulling changes.</small>
       <pre data-cc="false"><code data-trim class="hljs text">
           <script type="text/template">
             git pull <remote-name> <branch_name>
@@ -303,7 +303,7 @@
               git pull origin master
             </script> </code></pre>
     </section>
-    <section>
+    <section id="branch_management">
       <h1>Branch Management</h1>
     </section>
     <section data-transition="none">
@@ -331,7 +331,7 @@
       <img data-src="img/branch_management/02-5.png" width="700" height="500"
            style="border: none;box-shadow: none; background-color: transparent;" />
     </section>
-    <section>
+    <section id="creating">
       <h2>Branch Management</h2>
       <small>Creating new Branch.</small>
       <pre data-cc="false"><code data-trim class="hljs text">
@@ -339,7 +339,7 @@
               git branch <branch_name>
             </script> </code></pre>
       <pre><code>git branch develop</code></pre>
-      <small>Swith to a different branch.</small>
+      <small>Switch to a different branch.</small>
       <pre data-cc="false"><code data-trim class="hljs text">
           <script type="text/template">
             git checkout <other_branch_name>
@@ -352,7 +352,7 @@
           </script> </code></pre>
       <pre><code>git checkout -b feature-X</code></pre>
     </section>
-    <section>
+    <section id="merging_changes_from_a_branch">
       <h2>Branch Management</h2>
       <h6>To merge changes from a branch into another branch</h6>
       <small>Checkout the branch you want to update.</small>
@@ -397,7 +397,7 @@
       <img data-src="img/git_branch/03-3.png" width="850" height="200"
            style="border: none;box-shadow: none; background-color: transparent;" />
     </section>
-    <section>
+    <section id="deleting">
       <h2>Branch Management</h2>
       <small>Deleting a branch.</small>
       <pre data-cc="false"><code data-trim class="hljs text">
@@ -412,7 +412,7 @@
           </script> </code></pre>
       <pre><code>git branch -D feature-01</code></pre>
     </section>
-    <section>
+    <section id="renaming">
       <h2>Branch Management</h2>
       <small>Renaming the current branch.</small>
       <pre data-cc="false"><code data-trim class="hljs text">
@@ -427,7 +427,7 @@
           </script> </code></pre>
       <pre><code>git branch -m feature-2 feature-02</code></pre>
     </section>
-    <section>
+    <section id="list_all_branches">
       <h2>Branch Management</h2>
       <small>List local branches.</small>
       <pre><code>git branch</code></pre>
@@ -436,53 +436,53 @@
       <small>List all branches.</small>
       <pre><code>git branch -a</code></pre>
     </section>
-    <section>
-      <h1>Resolving conflicts</h1>
-    </section>
-    <section>
-      <h2>Resolving conflicts</h2>
-      <small>Set vimdiff as a git mergetool.</small>
-      <pre><code>git config --global merge.tool vimdiff</code></pre>
-      <pre><code>git config --global merge.conflictstyle diff3</code></pre>
-      <pre><code>git config --global mergetool.prompt false</code></pre>
-      <small>Open the git merge tool.</small>
-      <pre><code>git mergetool</code></pre>
-    </section>
-    <section>
-      <h2>Resolving conflicts</h2>
-      <p><small>Git Merge tool: Vimdiff</small></p>
-      <a href="img/mergetool/02.png" target="blank">
-        <img data-src="img/mergetool/01.png" width="325" height="225" />
-      </a>
-      <ul>
-        <li><small>LOCAL is how the file looked in your target branch.</small></li>
-        <li><small>BASE is how the file looked before both changes.</small></li>
-        <li><small>REMOTE is how the file looked in your source branch.</small></li>
-        <li><small>MERGED is the merge result, this is what gets saved in the repo.</small></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Resolving conflicts</h2>
-      <p><small>Vim diffget commands:</small></p>
-      <pre><code>:diffget LOCAL</code></pre>
-      <pre><code>:diffget BASE</code></pre>
-      <pre><code>:diffget REMOTE</code></pre>
-      <pre><code>:diffg LO</code></pre>
-      <pre><code>:diffg BA</code></pre>
-      <pre><code>:diffg RE</code></pre>
-    </section>
-    <section>
-      <h2>Resolving conflicts</h2>
-      <a href="img/mergetool/02.png" target="blank">
-        <img data-src="img/mergetool/02.png" width="250" height="150" />
-      </a>
-      <pre><code>:diffget REMOTE</code></pre>
-      <p><small>Save the merge result, and quit all windows.</small>
-      <pre><code>:wqa</code></pre>
-      <p><small>Now you are ready to commit your changes.</small>
-      <pre><code>git commit -m "Resolved conflicts"</code></pre>
-    </section>
-    <section>
+<!--    <section>-->
+<!--      <h1>Resolving conflicts</h1>-->
+<!--    </section>-->
+<!--    <section>-->
+<!--      <h2>Resolving conflicts</h2>-->
+<!--      <small>Set vimdiff as a git mergetool.</small>-->
+<!--      <pre><code>git config &#45;&#45;global merge.tool vimdiff</code></pre>-->
+<!--      <pre><code>git config &#45;&#45;global merge.conflictstyle diff3</code></pre>-->
+<!--      <pre><code>git config &#45;&#45;global mergetool.prompt false</code></pre>-->
+<!--      <small>Open the git merge tool.</small>-->
+<!--      <pre><code>git mergetool</code></pre>-->
+<!--    </section>-->
+<!--    <section>-->
+<!--      <h2>Resolving conflicts</h2>-->
+<!--      <p><small>Git Merge tool: Vimdiff</small></p>-->
+<!--      <a href="img/mergetool/02.png" target="blank">-->
+<!--        <img data-src="img/mergetool/01.png" width="325" height="225" />-->
+<!--      </a>-->
+<!--      <ul>-->
+<!--        <li><small>LOCAL is how the file looked in your target branch.</small></li>-->
+<!--        <li><small>BASE is how the file looked before both changes.</small></li>-->
+<!--        <li><small>REMOTE is how the file looked in your source branch.</small></li>-->
+<!--        <li><small>MERGED is the merge result, this is what gets saved in the repo.</small></li>-->
+<!--      </ul>-->
+<!--    </section>-->
+<!--    <section>-->
+<!--      <h2>Resolving conflicts</h2>-->
+<!--      <p><small>Vim diffget commands:</small></p>-->
+<!--      <pre><code>:diffget LOCAL</code></pre>-->
+<!--      <pre><code>:diffget BASE</code></pre>-->
+<!--      <pre><code>:diffget REMOTE</code></pre>-->
+<!--      <pre><code>:diffg LO</code></pre>-->
+<!--      <pre><code>:diffg BA</code></pre>-->
+<!--      <pre><code>:diffg RE</code></pre>-->
+<!--    </section>-->
+<!--    <section>-->
+<!--      <h2>Resolving conflicts</h2>-->
+<!--      <a href="img/mergetool/02.png" target="blank">-->
+<!--        <img data-src="img/mergetool/02.png" width="250" height="150" />-->
+<!--      </a>-->
+<!--      <pre><code>:diffget REMOTE</code></pre>-->
+<!--      <p><small>Save the merge result, and quit all windows.</small>-->
+<!--      <pre><code>:wqa</code></pre>-->
+<!--      <p><small>Now you are ready to commit your changes.</small>-->
+<!--      <pre><code>git commit -m "Resolved conflicts"</code></pre>-->
+<!--    </section>-->
+    <section id="extras">
       <h1>Extras</h1>
     </section>
     <section>
@@ -758,7 +758,7 @@
       </code></pre>
     </section>
     <section>
-      <section>
+      <section id="git_resources">
         <h1>Git Resources</h1>
       </section>
       <section>
@@ -886,7 +886,7 @@
           // element will be used.
           // Note: that a section data-menu-title attribute or an element
           // with a menu-title class will take precedence over this option
-          titleSelector: 'h1,h2.menu-title',
+          titleSelector: 'h1,h2.menu-title,small.menu-title',
 
           // If slides do not have a matching title, attempt to use the
           // start of the text content as the title instead
