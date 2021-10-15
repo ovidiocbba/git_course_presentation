@@ -30,16 +30,16 @@
     </section>
     <section>
       <h2>Agenda</h2>
-      <ul type="1">
-        <li>Introduction</li>
-        <li>Installation</li>
-        <li>Initial Git Configuration</li>
-        <li>Creating a Git repo</li>
+      <ul style="font-size:70%;">
+        <li><a href="#/introduction">Introduction</a></li>
+        <li><a href="#/installation">Installation</a></li>
+        <li><a href="#/initial_git_configuration">Initial Git Configuration</a></li>
+        <li><a href="#/creating_a_git_repo">Creating a Git repo</a></li>
         <ul>
-          <li>Initialize Git</li>
-          <li>Adding a file</li>
+          <li><a href="#/git_areas">Git Areas</a></li>
+          <li><a href="#/adding_a_file">Adding a file</a></li>
         </ul>
-        <li>Remote repository</li>
+        <li><a href="#/remote_repository">Remote repository</a></li>
         <ul>
           <li>Create</li>
           <li>Push</li>
@@ -64,9 +64,10 @@
         <li>Extras</li>
         <li>Git Resources</li>
       </ul>
-    </section> <section>
-    <h1>Introduction</h1>
-  </section>
+    </section>
+    <section id="introduction">
+      <h1>Introduction</h1>
+    </section>
     <section>
       <h2>WHAT IS GIT?</h2>
       <blockquote cite="https://en.wikipedia.org/wiki/Git">
@@ -83,13 +84,13 @@
         <li>Allows you to revert any changes and go back to a previous state.</li>
       </ul>
     </section>
-    <section>
+    <section id="installation">
       <h2>Installation</h2>
       <p><a href="https://git-scm.com/downloads" target="_blank">http://git-scm.com/downloads</a></p>
       <pre><code>git --version</code></pre>
       <pre data-cc="false"><code class="hljs text">git version 2.32.0.windows.1</code></pre>
     </section>
-    <section>
+    <section id="initial_git_configuration">
       <h2>Initial Git Configuration</h2>
       <small>Your Identify:</small>
       <pre><code>git config --global user.name "Your Name"</code></pre>
@@ -100,7 +101,7 @@
       <pre><code>git config --global -l</code></pre>
       <pre><code>git config --global -e</code></pre>
     </section>
-    <section>
+    <section id="creating_a_git_repo">
       <h1>Creating a Git repo</h1>
     </section>
     <section>
@@ -110,7 +111,7 @@
       <small>Initialize Git.</small>
       <pre><code>git init</code></pre>
     </section>
-    <section data-transition="none">
+    <section data-transition="none" id="git_areas">
       <h2>Git areas</h2>
       <img data-src="img/git_area_basic/00_1.png" width="600" height="550"
            style="border: none;box-shadow: none; background-color: transparent;" />
@@ -125,7 +126,7 @@
       <img data-src="img/git_area_basic/00_3.png" width="600" height="550"
            style="border: none;box-shadow: none; background-color: transparent;" />
     </section>
-    <section>
+    <section id="adding_a_file">
       <h2>Adding a file</h2>
       <small>Create a file.</small>
       <pre><code>vim first.txt</code></pre>
@@ -216,7 +217,7 @@
       <small>Commit a file.</small>
       <pre><code>git commit -m "My first commit in this repo"</code></pre>
     </section>
-    <section>
+    <section id="remote_repository">
       <h1>Remote repository</h1>
     </section>
     <section data-transition="none">
